@@ -1,11 +1,11 @@
-<canvas width="600" height="400"></canvas>
+<canvas width="1310" height="400"></canvas>
 
 <script>
 
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
     pincel.fillStyle = 'lightgray';
-    pincel.fillRect(0, 0, 600, 400);
+    pincel.fillRect(0, 0, 1310, 400);
 
 
     function desenhaCirculo(x, y, raio){
@@ -16,6 +16,21 @@
         pincel.fill();
 
     }
+
+    function limpaTela(){
+        pincel.clearRect(0, 0, 1320, 400); 
+    }
     
-    desenhaCirculo(20, 20, 10);
+    var xBola = -10
+    function atualizaTela(){
+
+        limpaTela()
+        desenhaCirculo(xBola,20,10)
+        xBola+=3
+
+    }
+
+    setInterval(atualizaTela,20);
+   
+    
 </script>
